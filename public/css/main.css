@@ -1,0 +1,33 @@
+body {
+    margin: 0 auto;
+    /* background-image: linear-gradient( rgba(51, 18, 4, 0.45), rgba(5, 39, 51, 0.45)), url("https://www.toptal.com/designers/subtlepatterns/patterns/shattered.png"); */
+    /* background-image: linear-gradient(rgba(159, 32, 132, 0.48), rgba(96, 69, 106, 0.48)), url("https://www.toptal.com/designers/subtlepatterns/patterns/subtle_stripes.png"); */
+    background-image: url("../img/blueprint.jpg");
+    height: 100vh;
+    /* font-family: 'Special Elite', cursive; */
+    font-family: 'Cabin Sketch', cursive;
+    color: #FFEEEE;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-content {
+    text-align: center;
+}
+
+input {
+    font-size: 1rem;
+}
+
+.letter-blanks {
+    font-size: 4rem;
+}
