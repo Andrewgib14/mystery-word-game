@@ -5,33 +5,13 @@ const words = fs.readFileSync("/usr/share/dict/words", "utf-8").toUpperCase().sp
 const session = require("express-session");
 
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-let randomWord = words[getRandomInt(0, words.length - 1)];
-console.log(randomWord);
-wordRoutes.get("/newgame", function (req, res) {
-    let game = {};
-    game.word = randomWord;
-    game.displayArray = [];
-    game.wrongGuesses = [];
-    game.correctGuesses = [];
-    game.turns = 8;
-    for (let i = 0; i < game.word.length; i++) {
-        game.displayArray.push("_");
-    }
-    console.log("turns = ", game.turns);
-    req.session.game = game;
-    return res.render("index", game);
-});
-
 
 
 //this stores the guess and compares it to the random word
 wordRoutes.post("/guess", (req, res) => {
     let game = req.session.game; //game is assigned FROM session
     let guessLetter = req.body.letterGuess.toUpperCase()// this is where the letter is entered in the form
-
+    let randomWord = req.session.game.word;
 
     if (alreadyGuessed(game, guessLetter)) {
         saveGame(req, game, "Already guessed");

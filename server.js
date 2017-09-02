@@ -7,6 +7,7 @@ const path = require("path");
 const sessionConfig = require("./sessionConfig");
 const indexRoutes = require("./routes/indexRoutes");
 const wordRoutes = require("./routes/wordRoutes");
+const newgameRoutes = require("./routes/newgameRoutes");
 
 const app = express();
 const port = process.env.PORT || 8005;
@@ -26,6 +27,7 @@ app.use(session(sessionConfig));
 //ROUTES
 app.use("/", indexRoutes);
 app.use("/word", wordRoutes);
+app.use("/newgame", newgameRoutes);
 
 
 

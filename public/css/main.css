@@ -31,3 +31,12 @@ input {
 .letter-blanks {
     font-size: 4rem;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
